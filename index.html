@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Konsep Interaktif: الأفعال المعربة (Fi'il Mu'rab)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Search container -->
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Cari materi...">
+        <button onclick="searchContent()" class="search-btn">🔍</button>
+        <button onclick="showHelp()" class="help-btn">❓</button>
+        <button onclick="printDiagram()" class="print-btn">🖨️</button>
+    </div>
+
+    <div class="container">
+        <h1 class="title">Peta Konsep: الأفعال المعربة (Fi'il Mu'rab)</h1>
+        
+        <div class="diagram-container">
+            <!-- HAPUS bagian diagram lama dan GANTI dengan: -->
+
+<div class="diagram">
+    <!-- Level 1: Konsep Utama -->
+    <div class="level level-1">
+        <div class="level-label">Konsep Utama</div>
+        <div class="box main-topic clickable" onclick="openModal('mainModal')">
+            <div class="box-content">
+                <h3>الأفعال المعربة</h3>
+                <small>Fi'il Mu'rab</small>
+            </div>
+        </div>
+        <!-- Garis ke definisi -->
+        <div class="connector-line vertical-line to-definition"></div>
+    </div>
+    
+    <!-- Level 2: Definisi -->
+    <div class="level level-2">
+        <div class="level-label">Definisi</div>
+        <div class="box definition clickable" onclick="openModal('definitionModal')">
+            <div class="box-content">
+                <h4>الفعل المضارع</h4>
+                <p>غير المتصل بنون النسوة أو نون التوكيد</p>
+                <small>Fi'il Mudhari' yang tidak bersambung dengan Nun Niswah atau Nun Ta'kid</small>
+            </div>
+        </div>
+        <!-- Garis ke pembagian -->
+        <div class="connector-line vertical-line to-branches"></div>
+    </div>
+    
+    <!-- Level 3: Pembagian Utama -->
+    <div class="level level-3">
+        <div class="level-label">Pembagian I'rab</div>
+        
+        <!-- Garis horizontal utama -->
+        <div class="connector-line main-horizontal"></div>
+        
+        <div class="branches-container">
+            <div class="branch-group">
+                <!-- Garis vertikal ke marfoo -->
+                <div class="connector-line vertical-branch left-branch"></div>
+                <div class="box branch marfoo clickable" onclick="openModal('marfooModal')">
+                    <div class="box-content">
+                        <h4>مرفوع</h4>
+                        <small>Marfu' (Keadaan Asli)</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="branch-group">
+                <!-- Garis vertikal ke mansoob -->
+                <div class="connector-line vertical-branch center-branch"></div>
+                <div class="box branch mansoob clickable" onclick="openModal('mansoobModal')">
+                    <div class="box-content">
+                        <h4>منصوب</h4>
+                        <small>Manshub (dengan Huruf Nashb)</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="branch-group">
+                <!-- Garis vertikal ke majzoom -->
+                <div class="connector-line vertical-branch right-branch"></div>
+                <div class="box branch majzoom clickable" onclick="openModal('majzoomModal')">
+                    <div class="box-content">
+                        <h4>مجزوم</h4>
+                        <small>Majzum (dengan Adat Jazm)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Garis ke tanda-tanda -->
+        <div class="connector-line vertical-line to-signs"></div>
+    </div>
+    
+    <!-- Level 4: Tanda-tanda I'rab -->
+    <div class="level level-4">
+        <div class="level-label">Tanda-tanda I'rab</div>
+        
+        <!-- Garis horizontal untuk tanda-tanda -->
+        <div class="connector-line signs-horizontal"></div>
+        
+        <div class="signs-container">
+            <!-- Tanda Marfoo -->
+            <div class="sign-group">
+                <div class="group-title">Tanda Rafa'</div>
+                <div class="connector-line sign-branch-left"></div>
+                <div class="sign-pair">
+                    <div class="box sub-branch marfoo-sign clickable" onclick="openModal('dammaModal')">
+                        <div class="box-content">
+                            <h5>الضمة</h5>
+                            <small>Dhammah (Asli)</small>
+                        </div>
+                    </div>
+                    <div class="box sub-branch marfoo-sign clickable" onclick="openModal('thabutNoonModal')">
+                        <div class="box-content">
+                            <h5>ثبوت النون</h5>
+                            <small>Tetapnya Nun (Af'al Khamsah)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tanda Mansoob -->
+            <div class="sign-group">
+                <div class="group-title">Tanda Nashb</div>
+                <div class="connector-line sign-branch-center"></div>
+                <div class="sign-pair">
+                    <div class="box sub-branch mansoob-sign clickable" onclick="openModal('fathaModal')">
+                        <div class="box-content">
+                            <h5>الفتحة</h5>
+                            <small>Fathah (Asli)</small>
+                        </div>
+                    </div>
+                    <div class="box sub-branch mansoob-sign clickable" onclick="openModal('hadhfNoonNasbModal')">
+                        <div class="box-content">
+                            <h5>حذف النون</h5>
+                            <small>Hapusnya Nun (Af'al Khamsah)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tanda Majzoom -->
+            <div class="sign-group">
+                <div class="group-title">Tanda Jazm</div>
+                <div class="connector-line sign-branch-right"></div>
+                <div class="sign-pair">
+                    <div class="box sub-branch majzoom-sign clickable" onclick="openModal('sukoonModal')">
+                        <div class="box-content">
+                            <h5>السكون</h5>
+                            <small>Sukun (Asli)</small>
+                        </div>
+                    </div>
+                    <div class="box sub-branch majzoom-sign clickable" onclick="openModal('hadhfNoonJazmModal')">
+                        <div class="box-content">
+                            <h5>حذف النون</h5>
+                            <small>Hapusnya Nun (Af'al Khamsah)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Garis ke tools -->
+        <div class="connector-line vertical-line to-tools"></div>
+    </div>
+    
+    <!-- Level 5: Alat dan Detail -->
+    <div class="level level-5">
+        <div class="level-label">Alat dan Keterangan</div>
+        
+        <div class="tools-container">
+            <div class="box detail-box tool clickable" onclick="openModal('nasbToolsModal')">
+                <div class="box-content">
+                    <h5>حروف النصب</h5>
+                    <small>Huruf Nashb (8 huruf)</small>
+                </div>
+            </div>
+            
+            <div class="box detail-box tool clickable" onclick="openModal('jazmToolsModal')">
+                <div class="box-content">
+                    <h5>أدوات الجزم</h5>
+                    <small>Adat Jazm (2 jenis)</small>
+                </div>
+            </div>
+            
+            <div class="box detail-box tool clickable" onclick="openModal('af3alKhamsaModal')">
+                <div class="box-content">
+                    <h5>الأفعال الخمسة</h5>
+                    <small>Af'al Khamsah (5 bentuk)</small>
+                </div>
+            </div>
+            
+            <div class="box detail-box tool clickable" onclick="openModal('mu3talAkhirModal')">
+                <div class="box-content">
+                    <h5>الفعل المعتل</h5>
+                    <small>Fi'il Mu'tal Akhir</small>
+                </div>
+            </div>
+            
+            <div class="box detail-box tool clickable" onclick="openModal('examplesModal')">
+                <div class="box-content">
+                    <h5>أمثلة تطبيقية</h5>
+                    <small>Contoh Penerapan</small>
+                </div>
+            </div>
+            
+            <div class="box detail-box tool clickable" onclick="openModal('notesModal')">
+                <div class="box-content">
+                    <h5>ملاحظات مهمة</h5>
+                    <small>Catatan Penting</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+    
+    <!-- Modal untuk setiap topik -->
+    
+    <!-- Modal Utama -->
+    <div id="mainModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-title">الأفعال المعربة (Fi'il Mu'rab)</div>
+            <div class="modal-section">
+                <h3>🔍 Definisi Lengkap:</h3>
+                <p><strong>Bahasa Arab:</strong> هو الفعل المضارع الذي تتغير حركة آخره أو بناؤه تبعاً للعوامل الداخلة عليه، وهو خالٍ من نون النسوة ونون التوكيد.</p>
+                <p><strong>Terjemahan:</strong> Fi'il mudhari' yang berubah harakat akhir atau bina'nya sesuai dengan 'amil yang masuk padanya, dan bebas dari nun niswah dan nun ta'kid.</p>
+            </div>
+            <div class="modal-section">
+                <h3>📊 Tiga Pembagian:</h3>
+                <ul>
+                    <li><strong>🟢 مرفوع (Marfu'):</strong> Keadaan asli tanpa 'amil</li>
+                    <li><strong>🟡 منصوب (Manshub):</strong> Dengan 8 huruf nashb</li>
+                    <li><strong>🔴 مجزوم (Majzum):</strong> Dengan berbagai adat jazm</li>
+                </ul>
+            </div>
+            <div class="examples-list">
+                <h4>🎯 Contoh Penjelasan:</h4>
+                <ul>
+                    <li><strong>Marfu':</strong> يكتبُ الطالب الدرس (Siswa menulis pelajaran)</li>
+                    <li><strong>Manshub:</strong> لن يكتبَ الطالب الدرس (Siswa tidak akan menulis pelajaran)</li>
+                    <li><strong>Majzum:</strong> لم يكتبْ الطالب الدرس (Siswa belum menulis pelajaran)</li>
+                </ul>
+            </div>
+            <div class="highlight">
+                <strong>💡 Catatan Penting:</strong> Jenis fi'il ini berbeda dengan fi'il mabni (madhi dan amr) yang tidak berubah harakat akhirnya.
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Definisi -->
+    <div id="definitionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-title">Penjelasan Definisi Terperinci</div>
+            <div class="modal-section">
+                <h3>🎯 Fi'il Mudhari':</h3>
+                <p><strong>Arab:</strong> هو الفعل الذي يدل على حدث يقع في زمن التكلم أو بعده (الحاضر أو المستقبل)، ويبدأ بأحد أحرف المضارعة الأربعة: <strong>(أ، ن، ي، ت)</strong></p>
+                <p><strong>Indonesia:</strong> Fi'il yang menunjukkan peristiwa yang terjadi pada waktu berbicara atau setelahnya (sekarang atau akan datang), dan dimulai dengan salah satu dari empat huruf mudhari'ah: <strong>(أ، ن، ي، ت)</strong></p>
+            </div>
+            <div class="modal-section">
+                <h3>❌ Tidak Bersambung dengan Nun Niswah:</h3>
+                <p><strong>Penjelasan:</strong> Jika fi'il mudhari' bersambung dengan nun niswah, maka menjadi mabni 'ala sukun dalam kedudukan rafa', nashb, atau jazm.</p>
+                <p><strong>Contoh:</strong> النساء يكتبْن الدرس (Para wanita menulis pelajaran) - mabni 'ala sukun</p>
+            </div>
+            <div class="modal-section">
+                <h3>❌ Tidak Bersambung dengan Nun Ta'kid:</h3>
+                <p><strong>Penjelasan:</strong> Jika bersambung dengan nun ta'kid (tsaqilah atau khafifah), menjadi mabni 'ala fath.</p>
+                <p><strong>Contoh:</strong> والله لتكتبَنَّ الواجب (Demi Allah, kamu pasti akan menulis tugas) - mabni 'ala fath</p>
+            </div>
+            <div class="highlight">
+                <strong>📝 Kesimpulan:</strong> Fi'il Mu'rab = Fi'il Mudhari' - Nun Niswah - Nun Ta'kid
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Marfu' -->
+    <div id="marfooModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-title">Fi'il Mudhari' Marfu'</div>
+            <div class="modal-section">
+                <h3>📋 Syarat-syarat Rafa':</h3>
+                <p>Fi'il mudhari' menjadi marfu' jika tidak didahului oleh huruf nashb atau adat jazm, dan ini adalah keadaan aslinya.</p>
+            </div>
+            <div class="modal-section">
+                <h3>🔤 Tanda-tanda Rafa':</h3>
+                <ul>
+                    <li><strong>الضمة الظاهرة (Dhammah Zhahirah):</strong> Pada fi'il shahih akhir (يكتبُ، يقرأُ)</li>
+                    <li><strong>الضمة المقدرة (Dhammah Muqaddarah):</strong> Pada fi'il mu'tal akhir (يسعى، يدعو، يرمي)</li>
+                    <li><strong>ثبوت النون (Tetapnya Nun):</strong> Pada af'al khamsah (يكتبون، تكتبين)</li>
+                </ul>
+            </div>
+            <div class="examples-list">
+                <h4>🎯 Contoh Beragam:</h4>
+                <ul>
+                    <li>أكتبُ الدرس بعناية (Saya menulis pelajaran dengan teliti) - dhammah zhahirah</li>
+                    <li>الطلاب يدرسون بجد (Para siswa belajar dengan sungguh-sungguh) - tetapnya nun</li>
+                    <li>أنت تقرئين القرآن (Kamu membaca Al-Qur'an) - tetapnya nun</li>
+                    <li>هو يسعى للنجاح (Dia berusaha untuk sukses) - dhammah muqaddarah</li>
+                </ul>
+            </div>
+            <div class="highlight">
+                <strong>⭐ Ingat:</strong> Rafa' adalah keadaan asli fi'il mudhari', tidak memerlukan 'amil khusus.
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Manshub -->
+    <div id="mansoobModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-title">Fi'il Mudhari' Manshub</div>
+            <div class="modal-section">
+                <h3>📝 Delapan Huruf Nashb:</h3>
+                <ul>
+                    <li><strong>أن:</strong> أريد أن أسافرَ غداً (Saya ingin bepergian besok)</li>
+                    <li><strong>لن:</strong> لن أتأخرَ عن الموعد (Saya tidak akan terlambat dari janji)</li>
+                    <li><strong>كي:</strong> ادرس كي تنجحَ في الامتحان (Belajarlah agar sukses dalam ujian)</li>
+                    <li><strong>إذن:</strong> إذن أساعدَك في المهمة (Kalau begitu saya akan membantu kamu dalam tugas)</li>
+                    <li><strong>لام التعليل:</strong> جئت لأتعلمَ العلم (Saya datang untuk belajar ilmu)</li>
+                    <li><strong>فاء السببية:</strong> لا تهمل فتندمَ (Jangan lalai sehingga menyesal)</li>
+                    <li><strong>حتى:</strong> سأعمل حتى أنجحَ (Saya akan bekerja hingga berhasil)</li>
+                    <li><strong>لام الجحود:</strong> ما كان ليتأخرَ (Dia tidak mungkin terlambat)</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>🔤 Tanda-tanda Nashb:</h3>
+                <ul>
+                    <li><strong>الفتحة الظاهرة:</strong> لن يكتبَ</li>
+                    <li><strong>الفتحة المقدرة:</strong> لن يسعى</li>
+                    <li><strong>حذف النون:</strong> لن يكتبوا</li>
+                </ul>
+            </div>
+            <div class="examples-list">
+                <h4>🎯 Contoh Penerapan:</h4>
+                <ul>
+                    <li>لن أنسى فضلك أبداً (Saya tidak akan melupakan kebaikan kamu selamanya)</li>
+                    <li>أريد أن أتفوقَ في دراستي (Saya ingin berprestasi dalam studi saya)</li>
+                    <li>ادرس كي تحققَ أهدافك (Belajarlah agar mencapai tujuan kamu)</li>
+                    <li>لن يكتبوا الواجب اليوم (Mereka tidak akan menulis tugas hari ini)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Majzum -->
+    <div id="majzoomModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-title">Fi'il Mudhari' Majzum</div>
+            <div class="modal-section">
+                <h3>🔧 Adat Jazm Ada Dua Jenis:</h3>
+                
+                <h4>1️⃣ Yang Men-jazm Satu Fi'il:</h4>
+                <ul>
+                    <li><strong>لم:</strong> لم أذهبْ إلى المدرسة أمس (Saya tidak pergi ke sekolah kemarin)</li>
+                    <li><strong>لما:</strong> لما يصلْ الضيف بعد (Tamu belum datang)</li>
+                    <li><strong>لا الناهية:</strong> لا تتأخرْ عن الصلاة (Jangan terlambat dari shalat)</li>
+                    <li><strong>لام الأمر:</strong> ليذهبْ إلى الطبيب (Hendaklah dia pergi ke dokter)</li>
+                </ul>
+                
+                <h4>2️⃣ Yang Men-jazm Dua Fi'il (Adat Syarat):</h4>
+                <ul>
+                    <li><strong>إن:</strong> إن تدرسْ تنجحْ (Jika kamu belajar, kamu akan berhasil)</li>
+                    <li><strong>من:</strong> من يعملْ خيراً يجدْه (Siapa yang berbuat baik akan mendapatkannya)</li>
+                    <li><strong>ما:</strong> ما تفعلْ أفعلْ (Apa yang kamu lakukan, saya lakukan)</li>
+                    <li><strong>متى:</strong> متى تأتِ أكرمْك (Kapan kamu datang, saya akan memuliakan kamu)</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>🔤 Tanda-tanda Jazm:</h3>
+                <ul>
+                    <li><strong>السكون:</strong> لم يكتبْ</li>
+                    <li><strong>حذف حرف العلة:</strong> لم يسعَ</li>
+                    <li><strong>حذف النون:</strong> لم يكتبوا</li>
+                </ul>
+            </div>
+            <div class="examples-list">
+                <h4>🎯 Contoh Lengkap:</h4>
+                <ul>
+                    <li>لم يحضرْ الطالب اليوم (Siswa tidak hadir hari ini)</li>
+                    <li>لا تنسَ واجبك (Jangan lupa tugas kamu)</li>
+                    <li>إن تصدقْ يصدقْك الناس (Jika kamu jujur, orang akan mempercayai kamu)</li>
+                    <li>لم يكتبوا الرسالة (Mereka belum menulis surat)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal tambahan untuk topik detail -->
+    <div id="dammaModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-title">الضمة - Tanda Rafa' Asli</div>
+            <div class="modal-section">
+                <h3>📝 Definisi:</h3>
+                <p>Dhammah adalah tanda asli untuk merafa'kan fi'il mudhari' yang shahih akhir.</p>
+            </div>
+            <div class="examples-list">
+                <h4>🎯 Contoh:</h4>
+                <ul>
+                    <li>يكتبُ الطالب الدرس (Siswa menulis pelajaran)</li>
+                    <li>تقرأُ البنت القصة (Gadis itu membaca cerita)</li>
+                    <li>أدرسُ النحو بعناية (Saya belajar nahwu dengan teliti)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="nasbToolsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-title">Delapan Huruf Nashb</div>
+            <div class="modal-section">
+                <h3>📝 Daftar Lengkap:</h3>
+                <ol>
+                    <li><strong>أن:</strong> Huruf masdariyah dan nashb</li>
+                    <li><strong>لن:</strong> Huruf nafi, nashb, dan istiqbal</li>
+                    <li><strong>كي:</strong> Huruf masdariyah dan nashb</li>
+                    <li><strong>إذن:</strong> Huruf jawab, jaza', dan nashb</li>
+                    <li><strong>لام التعليل:</strong> Huruf jar dan nashb</li>
+                    <li><strong>فاء السببية:</strong> Huruf athf dan nashb</li>
+                    <li><strong>حتى:</strong> Huruf ghayah dan nashb</li>
+                    <li><strong>لام الجحود:</strong> Setelah kana yang dinafikan</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="af3alKhamsaModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-title">الأفعال الخمسة (Af'al Khamsah)</div>
+            <div class="modal-section">
+                <h3>📝 Definisi:</h3>
+                <p>Setiap fi'il mudhari' yang bersambung dengan alif tatsniyah, wawu jama'ah, atau ya' mukhatabah.</p>
+            </div>
+            <div class="modal-section">
+                <h3>🔤 Lima Bentuk:</h3>
+                <ul>
+                    <li><strong>يفعلان:</strong> الطالبان يكتبان (Dua siswa menulis)</li>
+                    <li><strong>تفعلان:</strong> أنتما تكتبان (Kalian berdua menulis)</li>
+                    <li><strong>يفعلون:</strong> الطلاب يكتبون (Para siswa menulis)</li>
+                    <li><strong>تفعلون:</strong> أنتم تكتبون (Kalian menulis)</li>
+                    <li><strong>تفعلين:</strong> أنت تكتبين (Kamu menulis - perempuan)</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>🔤 I'rabnya:</h3>
+                <ul>
+                    <li><strong>Rafa':</strong> Dengan tetapnya nun (يكتبون، تكتبين)</li>
+                    <li><strong>Nashb:</strong> Dengan hapusnya nun (لن يكتبوا، لن تكتبي)</li>
+                    <li><strong>Jazm:</strong> Dengan hapusnya nun (لم يكتبوا، لم تكتبي)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal lainnya dengan pola yang sama... -->
+    
+    <script src="script.js"></script>
+</body>
+</html>
