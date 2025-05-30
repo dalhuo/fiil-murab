@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأفعال المعربة - Peta Konsep Fi'il Mu'rab</title>
+    <meta name="description" content="Peta Konsep Interaktif Al-Af'al Al-Mu'rabah - Belajar Fi'il Mu'rab dengan mudah">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">الأفعال المعربة<br><small>Peta Konsep Fi'il Mu'rab</small></h1>
+        
+        <!-- Search and Controls -->
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="🔍 Cari materi..." id="searchInput">
+            <button class="search-btn" onclick="searchContent()">Cari</button>
+            <button class="help-btn" onclick="showHelp()">❓ Bantuan</button>
+            <button class="print-btn" onclick="window.print()">🖨️ Cetak</button>
+            
+            <!-- Zoom Controls -->
+            <div class="zoom-controls">
+                <button onclick="zoomIn()" title="Perbesar">🔍+</button>
+                <button onclick="zoomOut()" title="Perkecil">🔍-</button>
+                <button onclick="resetZoom()" title="Reset">↻</button>
+            </div>
+        </div>
+
+        <div class="diagram-container">
+            <div class="diagram">
+                <!-- Level 1: Konsep Utama -->
+                <div class="level level-1">
+                    <div class="level-label">المفهوم الأساسي</div>
+                    <div class="box main-topic clickable" onclick="openModal('mainModal')" data-tooltip="الأفعال المعربة">
+                        <div class="box-content">
+                            <h3>الأفعال المعربة</h3>
+                            <small>Al-Af'al Al-Mu'rabah</small>
+                        </div>
+                    </div>
+                    <div class="connector-line vertical-line to-definition"></div>
+                </div>
+                
+                <!-- Level 2: Definisi -->
+                <div class="level level-2">
+                    <div class="level-label">التعريف</div>
+                    <div class="box definition clickable" onclick="openModal('definitionModal')" data-tooltip="تعريف الفعل المعرب">
+                        <div class="box-content">
+                            <h4>الفعل المضارع</h4>
+                            <p>الذي لم يتصل بنون النسوة أو نون التوكيد المباشرة</p>
+                            <small>Fi'il Mudhari' yang tidak bersambung dengan Nun Niswah atau Nun Ta'kid</small>
+                        </div>
+                    </div>
+                    <div class="connector-line vertical-line to-branches"></div>
+                </div>
+                
+                <!-- Level 3: Pembagian I'rab -->
+                <div class="level level-3">
+                    <div class="level-label">أقسام الإعراب</div>
+                    
+                    <div class="connector-line main-horizontal"></div>
+                    
+                    <div class="branches-container">
+                        <div class="branch-group">
+                            <div class="connector-line vertical-branch left-branch"></div>
+                            <div class="box branch marfoo clickable" onclick="openModal('marfooModal')" data-tooltip="الفعل المضارع المرفوع">
+                                <div class="box-content">
+                                    <h4>مرفوع</h4>
+                                    <small>Marfu' - لم يسبقه حرف نصب أو جزم</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="branch-group">
+                            <div class="connector-line vertical-branch center-branch"></div>
+                            <div class="box branch mansoob clickable" onclick="openModal('mansoobModal')" data-tooltip="الفعل المضارع المنصوب">
+                                <div class="box-content">
+                                    <h4>منصوب</h4>
+                                    <small>Manshub - سبقه حرف نصب</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="branch-group">
+                            <div class="connector-line vertical-branch right-branch"></div>
+                            <div class="box branch majzoom clickable" onclick="openModal('majzoomModal')" data-tooltip="الفعل المضارع المجزوم">
+                                <div class="box-content">
+                                    <h4>مجزوم</h4>
+                                    <small>Majzum - سبقه أداة جزم</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="connector-line vertical-line to-signs"></div>
+                </div>
+                
+                <!-- Level 4: Tanda-tanda I'rab -->
+                <div class="level level-4">
+                    <div class="level-label">علامات الإعراب</div>
+                    
+                    <div class="connector-line signs-horizontal"></div>
+                    
+                    <div class="signs-container">
+                        <!-- Tanda Rafa' -->
+                        <div class="sign-group">
+                            <div class="group-title">علامات الرفع</div>
+                            <div class="connector-line sign-branch-left"></div>
+                            <div class="sign-pair">
+                                <div class="box sub-branch marfoo-sign clickable" onclick="openModal('dammaModal')" data-tooltip="الضمة الظاهرة">
+                                    <div class="box-content">
+                                        <h5>الضمة</h5>
+                                        <small>Dhammah (الأصل)</small>
+                                    </div>
+                                </div>
+                                <div class="box sub-branch marfoo-sign clickable" onclick="openModal('thabutNoonModal')" data-tooltip="ثبوت النون للأفعال الخمسة">
+                                    <div class="box-content">
+                                        <h5>ثبوت النون</h5>
+                                        <small>Tetapnya Nun (الأفعال الخمسة)</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tanda Nashb -->
+                        <div class="sign-group">
+                            <div class="group-title">علامات النصب</div>
+                            <div class="connector-line sign-branch-center"></div>
+                            <div class="sign-pair">
+                                <div class="box sub-branch mansoob-sign clickable" onclick="openModal('fathaModal')" data-tooltip="الفتحة الظاهرة">
+                                    <div class="box-content">
+                                        <h5>الفتحة</h5>
+                                        <small>Fathah (الأصل)</small>
+                                    </div>
+                                </div>
+                                <div class="box sub-branch mansoob-sign clickable" onclick="openModal('hadhfNoonNasbModal')" data-tooltip="حذف النون للأفعال الخمسة">
+                                    <div class="box-content">
+                                        <h5>حذف النون</h5>
+                                        <small>Hapusnya Nun (الأفعال الخمسة)</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tanda Jazm -->
+                        <div class="sign-group">
+                            <div class="group-title">علامات الجزم</div>
+                            <div class="connector-line sign-branch-right"></div>
+                            <div class="sign-pair">
+                                <div class="box sub-branch majzoom-sign clickable" onclick="openModal('sukoonModal')" data-tooltip="السكون الظاهر">
+                                    <div class="box-content">
+                                        <h5>السكون</h5>
+                                        <small>Sukun (الأصل)</small>
+                                    </div>
+                                </div>
+                                <div class="box sub-branch majzoom-sign clickable" onclick="openModal('hadhfNoonJazmModal')" data-tooltip="حذف النون للأفعال الخمسة">
+                                    <div class="box-content">
+                                        <h5>حذف النون</h5>
+                                        <small>Hapusnya Nun (الأفعال الخمسة)</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="connector-line vertical-line to-tools"></div>
+                </div>
+                
+                <!-- Level 5: Detail dan Alat -->
+                <div class="level level-5">
+                    <div class="level-label">التفاصيل والأدوات</div>
+                    
+                    <div class="tools-container">
+                        <div class="box detail-box tool clickable" onclick="openModal('nasbToolsModal')" data-tooltip="حروف النصب الثمانية">
+                            <div class="box-content">
+                                <h5>حروف النصب</h5>
+                                <small>8 Huruf Nashb</small>
+                            </div>
+                        </div>
+                        
+                        <div class="box detail-box tool clickable" onclick="openModal('jazmToolsModal')" data-tooltip="أدوات الجزم قسمان">
+                            <div class="box-content">
+                                <h5>أدوات الجزم</h5>
+                                <small>2 Jenis Adat Jazm</small>
+                            </div>
+                        </div>
+                        
+                        <div class="box detail-box tool clickable" onclick="openModal('af3alKhamsaModal')" data-tooltip="الأفعال الخمسة">
+                            <div class="box-content">
+                                <h5>الأفعال الخمسة</h5>
+                                <small>5 Bentuk Fi'il</small>
+                            </div>
+                        </div>
+                        
+                        <div class="box detail-box tool clickable" onclick="openModal('mu3talAkhirModal')" data-tooltip="الفعل المعتل الآخر">
+                            <div class="box-content">
+                                <h5>الفعل المعتل</h5>
+                                <small>Fi'il Mu'tal Akhir</small>
+                            </div>
+                        </div>
+                        
+                        <div class="box detail-box tool clickable" onclick="openModal('examplesModal')" data-tooltip="أمثلة شاملة">
+                            <div class="box-content">
+                                <h5>أمثلة تطبيقية</h5>
+                                <small>Contoh Lengkap</small>
+                            </div>
+                        </div>
+                        
+                        <div class="box detail-box tool clickable" onclick="openModal('notesModal')" data-tooltip="ملاحظات مهمة">
+                            <div class="box-content">
+                                <h5>ملاحظات مهمة</h5>
+                                <small>Catatan Penting</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL PLACEHOLDER -->
+    <div id="modalContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
